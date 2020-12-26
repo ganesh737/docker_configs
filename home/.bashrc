@@ -144,3 +144,8 @@ export PS1='\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)\$ '
 export EDITOR=vim
 
 export XENVIRONMENT="${HOME}/.Xresources"
+
+## speifics for jekyll
+# Install Ruby Gems to ~/gems'
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
