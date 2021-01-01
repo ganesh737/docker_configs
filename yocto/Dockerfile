@@ -5,7 +5,7 @@ MAINTAINER ganesh <ganesh.rvec@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Upgrade system, add Yocto Proyect basic dependencies and extras
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update && apt-get dist-upgrade -y
 
 # Set up locales
 RUN apt-get -y install locales apt-utils sudo && dpkg-reconfigure locales && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -27,6 +27,12 @@ RUN apt-get -y install lighttpd
 
 # for bitbake -g
 RUN apt-get -y install python3-gi python3-pip python3-aptdaemon.gtk3widgets
+
+# Install xsltproc for documentation builds
+RUN apt-get -y install xsltproc
+
+# install ncurses for menuconfig
+RUN apt-get -y install libncurses-dev
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
