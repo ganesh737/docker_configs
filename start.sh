@@ -59,7 +59,7 @@ set_yocto_build_env_vars() {
 
 set_yocto_build_env_vars
 # parse input arguments
-while getopts ":hxnpeyj" opt; do
+while getopts ":hxfpyn" opt; do
     case ${opt} in
         h )
             usage
