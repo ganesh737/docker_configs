@@ -1,5 +1,5 @@
-# this image augments Ubuntu 20.04 with the minimum necessary to run Yocto with support for QEMU and devtool
-FROM ubuntu:20.04
+# this image augments Ubuntu 16.04 with the minimum necessary to run Yocto with support for QEMU and devtool
+FROM ubuntu:16.04
 MAINTAINER ganesh <ganesh.rvec@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
