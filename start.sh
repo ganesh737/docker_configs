@@ -6,7 +6,7 @@ usage() {
     echo "Usage:"
     echo "$0 <options>"
     echo "Available options:"
-    echo "-y|-j|-n Use yocto/jekyll/nodejs container(y is the default value)"
+    echo "-y|-n Use yocto/nodejs container(y is the default value)"
     echo "-x    Use X11 forwarding"
     echo "-f    Forward /dev/net/tun"
     echo "-p    Run container in privileged mode"

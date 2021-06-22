@@ -1,5 +1,18 @@
 # docker_configs
 
+## Building the images
+
+### nodejs
+```shell
+docker build -t nodejs:1.0 nodejs/
+```
+
+### yocto
+```shell
+docker build -t yocto:1.0 yocto/
+```
+
+## Script usage
 Start with start.sh -
 ```shell
 -y|-j Use yocto-build-env/nodejs-env container(y is the default value)
