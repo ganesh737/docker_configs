@@ -5,17 +5,20 @@ MAINTAINER ganesh <ganesh.rvec@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Upgrade system
-RUN apt-get update && apt-get -y upgrade
+RUN apt-get update
 
-# Set up locales
-RUN apt-get -y install locales apt-utils sudo && dpkg-reconfigure locales && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+RUN apt-get -y install locales apt-utils sudo
+RUN dpkg-reconfigure locales && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.utf8
+
+RUN apt-get -y dist-upgrade
 
 # Install nodejs basic packages and extras
 # https://github.com/nodesource/distributions/blob/master/README.md
-RUN apt-get -y install git-core diffstat unzip curl
+RUN apt-get -y install git-core diffstat unzip curl gcc g++ cmake build-essential
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 RUN apt-get install -y nodejs
+RUN npm install -g npm
 
 # Replace dash with bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
